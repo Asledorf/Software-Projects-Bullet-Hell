@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &963187047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8272674715669659121, guid: a45337acb17ecf24bab044fa6686a012, type: 3}
+  m_PrefabInstance: {fileID: 5708047620390252530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &963187052
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963187047}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1290737753
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +487,10 @@ PrefabInstance:
     - target: {fileID: -3247969490878547886, guid: a45337acb17ecf24bab044fa6686a012, type: 3}
       propertyPath: m_Size.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3247969490878547886, guid: a45337acb17ecf24bab044fa6686a012, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823702720148394747, guid: a45337acb17ecf24bab044fa6686a012, type: 3}
       propertyPath: move_speed
