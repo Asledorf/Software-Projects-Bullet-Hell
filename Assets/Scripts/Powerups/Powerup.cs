@@ -15,7 +15,7 @@ public abstract class Powerup : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PowerupEffect(collision.gameObject);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 

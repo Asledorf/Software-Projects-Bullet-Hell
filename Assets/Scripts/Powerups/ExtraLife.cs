@@ -6,6 +6,6 @@ public class ExtraLife : Powerup
 {
     public override void PowerupEffect(GameObject target)
     {
-        //GameController.lives++;
+        RespawnManager.Instance.lives++;
     }
 }
