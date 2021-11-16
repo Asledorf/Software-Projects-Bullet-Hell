@@ -145,10 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78e7e5f868fda948a99a0c1356a0d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot_script: {fileID: 0}
   approach_speed: 0
   lateral_speed: 0
   firerate: 0
   orbitRadius: 75
   orbitRadiusCorrectionSpeed: 0.5
-  orbitRoationSpeed: 10
+  orbitRoationSpeed: 100
   orbitAlignToDirectionSpeed: 0.5

@@ -27,9 +27,4 @@ public class Player : MonoBehaviour
 		if (Input.GetKey(KeyCode.D)) move += Vector3.right;
 		transform.position += move.normalized * speed * Time.deltaTime;
 	}
-
-	private void OnDestroy()
-	{
-		whiteboard.instance.player = null;
-	}
 }

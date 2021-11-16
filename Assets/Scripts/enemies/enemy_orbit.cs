@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class enemy_orbit : enemy
 {
-	
 	Transform objectToOrbit; //Object To Orbit
 	Vector3 orbitAxis = Vector3.forward; //Which vector to use for Orbit
 
@@ -12,12 +11,12 @@ public class enemy_orbit : enemy
 	public float orbitRadius = 75; //Orbit Radius
 	public float orbitRadiusCorrectionSpeed = .5f; //How quickly the object moves to new position
 	public float orbitRoationSpeed = 10; //Speed Of Rotation arround object
-	public float orbitAlignToDirectionSpeed = .5f; //Realign speed to direction of travel
 
 	private Vector3 orbitDesiredPosition;
 
 	private void Start()
 	{
+		if (!whiteboard.instance.player) return;
 		orbitDesiredPosition = whiteboard.instance.player.transform.position;
 		objectToOrbit = whiteboard.instance.player.transform;
 	}

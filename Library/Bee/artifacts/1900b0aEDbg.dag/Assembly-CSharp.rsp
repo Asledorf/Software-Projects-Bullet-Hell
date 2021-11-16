@@ -358,10 +358,18 @@
 "Assets/Scripts/enemies/enemy.cs"
 "Assets/Scripts/enemies/enemy_beeline.cs"
 "Assets/Scripts/enemies/enemy_orbit.cs"
+"Assets/Scripts/enemies/enemy_shooting/es_basic.cs"
+"Assets/Scripts/enemies/enemy_shooting/e_shoot.cs"
 "Assets/Scripts/enemies/enemy_spawner.cs"
+"Assets/Scripts/enemies/enemy_stationary.cs"
 "Assets/Scripts/enemies/enemy_tile.cs"
+"Assets/Scripts/enemies/e_projectiles/ep_basic.cs"
+"Assets/Scripts/enemies/e_projectiles/e_projectile.cs"
 "Assets/Scripts/Gun.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/Powerups/ExtraLife.cs"
+"Assets/Scripts/Powerups/Powerup.cs"
+"Assets/Scripts/RespawnManager.cs"
 "Assets/Scripts/whiteboard.cs"
 -langversion:8.0
 
