@@ -124,7 +124,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!114 &236004270 stripped
 MonoBehaviour:
@@ -162,6 +165,9 @@ MonoBehaviour:
   joystick: {fileID: 236004270}
 --- !u!50 &583003356
 =======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &963187047 stripped
 GameObject:
@@ -170,6 +176,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!50 &963187052
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 07eaecb8e8101a0d38e1bdf63e478d7aa6964cf2
+>>>>>>> Stashed changes
 =======
 >>>>>>> 07eaecb8e8101a0d38e1bdf63e478d7aa6964cf2
 >>>>>>> Stashed changes
@@ -180,9 +190,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 963187047}
   m_BodyType: 1
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 583003350}
   m_BodyType: 0
@@ -190,6 +203,9 @@ Rigidbody2D:
   m_GameObject: {fileID: 963187047}
   m_BodyType: 1
 >>>>>>> 07eaecb8e8101a0d38e1bdf63e478d7aa6964cf2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -204,7 +220,10 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!114 &583003357
 MonoBehaviour:
@@ -240,6 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 =======
 >>>>>>> 07eaecb8e8101a0d38e1bdf63e478d7aa6964cf2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1290737753
 GameObject:
