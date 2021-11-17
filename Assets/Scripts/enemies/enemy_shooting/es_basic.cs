@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class es_basic : e_shoot
 {
-	protected override void Shoot()
+	private void Start()
 	{
-		Instantiate(bullet_options[0]);
+		base.Start();
+		Shoot();
+	}
+
+	public override void Shoot()
+	{
+		Instantiate(bullet_options[0], transform.position, Quaternion.identity);
+		//Instantiate(bullet_options[0]);
 	}
 
 	// Update is called once per frame
 	void Update()
     {
         base.Update();
-		if ((dt_accumulator += Time.deltaTime) >= fire_rate)
-		{
-			dt_accumulator = 0;
-			Shoot();
-		}
     }
 	
 }

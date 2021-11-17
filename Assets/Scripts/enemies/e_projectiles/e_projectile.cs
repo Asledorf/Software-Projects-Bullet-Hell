@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//bullets themselves handle their individual movement logic
 public abstract class e_projectile : MonoBehaviour
 {
-    public abstract void pattern();
+    public float move_speed = 15;
+    protected abstract void pattern();
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
-        
+        if(!whiteboard.instance.player)
+		{
+            Destroy(gameObject);
+            return;
+		}
+        pattern(); 
     }
 }

@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ep_basic : MonoBehaviour
+public class ep_basic : e_projectile
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private void Update() => base.Update();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private Vector3 targetpos;
+	private Vector3 direction;
+
+	private void Start()
+	{
+		targetpos = whiteboard.instance.player.transform.position;
+		direction = (targetpos - transform.position).normalized;
+		Destroy(gameObject, 10);
+	}
+
+	protected override void pattern()
+	{
+		transform.position += direction * move_speed * Time.deltaTime;
+	}
 }

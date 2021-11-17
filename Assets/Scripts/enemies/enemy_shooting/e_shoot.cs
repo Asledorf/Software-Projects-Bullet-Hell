@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//class defines how, when, and where to spawn bullets
 public abstract class e_shoot : MonoBehaviour
 {
 	public e_projectile[] bullet_options;
 	public float fire_rate;
 	protected float dt_accumulator;
-	protected Player player;
+
 	protected void Start()
 	{
-		player = whiteboard.instance.player;
-		if (!player) Destroy(gameObject);
+		if (!Player.Alive) Destroy(gameObject);
 	}
-	protected abstract void Shoot();
+
 	protected void Update()
 	{
-		if (!player) return;
+		if (!Player.Alive) return;
 	}
+
+	public abstract void Shoot();
 }
