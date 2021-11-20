@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_fast.cs" />
     <Compile Include="Assets\Scripts\enemies\e_types\enemy_stationary.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy_shooting\es_basic.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Pinwheel.cs" />
     <Compile Include="Assets\Scripts\Powerups\Powerup.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\RespawnTest.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="Assets\Scripts\enemies\e_types\enemy_beeline.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\enemies\e_spawner.cs" />
-    <Compile Include="Assets\Scripts\Powerups\Pinwheel.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Shotgun.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

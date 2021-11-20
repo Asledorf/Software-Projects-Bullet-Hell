@@ -374,6 +374,7 @@
 "Assets/Scripts/Powerups/ExtraLife.cs"
 "Assets/Scripts/Powerups/Pinwheel.cs"
 "Assets/Scripts/Powerups/Powerup.cs"
+"Assets/Scripts/Powerups/Shotgun.cs"
 "Assets/Scripts/RespawnManager.cs"
 "Assets/Scripts/RespawnTest.cs"
 "Assets/Scripts/whiteboard.cs"
