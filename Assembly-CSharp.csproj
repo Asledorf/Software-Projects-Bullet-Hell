@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2021.1.28f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\enemies\enemy_shooting\e_shoot.cs" />
     <Compile Include="Assets\Scripts\Powerups\ExtraLife.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="Assets\Scripts\Powerups\Pinwheel.cs" />
     <Compile Include="Assets\Scripts\Powerups\Powerup.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Shotgun.cs" />
     <Compile Include="Assets\Scripts\RespawnTest.cs" />
     <Compile Include="Assets\Scripts\RespawnManager.cs" />
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_homing.cs" />
@@ -76,7 +80,6 @@
     <Compile Include="Assets\Scripts\enemies\e_types\enemy_beeline.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\enemies\e_spawner.cs" />
-    <Compile Include="Assets\Scripts\Powerups\Shotgun.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
