@@ -9,7 +9,10 @@ public class PinwheelPickup : Powerup
         if(target.TryGetComponent(out Pinwheel pinwheel))
         {
             pinwheel.enabled = true;
-            target.GetComponent<Gun>().enabled = false;
+        }
+        else
+        {
+            target.AddComponent(typeof(Pinwheel));
         }
     }
 }
