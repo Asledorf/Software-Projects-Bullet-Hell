@@ -33,4 +33,9 @@ public abstract class enemy : MonoBehaviour
 		Move();
 		Shoot();
 	}
+
+    private void OnDestroy()
+    {
+		PowerUpManager.Instance.SpawnPowerUp(transform.position);
+    }
 }

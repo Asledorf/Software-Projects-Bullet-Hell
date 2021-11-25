@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
     public float shoot_speed = 100;
     public GameObject bullet_prefab = null;
-    public float fire_rate = 0.1f;
+    float fire_rate = 0.2f;
     float accumulator = 0;
     // Update is called once per frame
     void Update()
