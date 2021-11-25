@@ -734,10 +734,16 @@ MonoBehaviour:
   powerups:
   - {fileID: 8970985384859458017, guid: 3b7ad69c9a3a2624dab790b7beded164, type: 3}
   - {fileID: 1514104370653681137, guid: 4f793ce880393124e95741462dc0edf0, type: 3}
+  - {fileID: 7924533202242135484, guid: 1f25c715eaae4604481c86b2aff8363a, type: 3}
+  - {fileID: 2055187496425529771, guid: 913f47817c8fed046b55189760e0ec13, type: 3}
+  - {fileID: 7395674612413578158, guid: 539b947de1e2dac4fbb1945ebc39eaae, type: 3}
   DropRate: 0.5
   chances:
-  - 0.5
-  - 0.5
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
 --- !u!4 &2020408490
 Transform:
   m_ObjectHideFlags: 0
