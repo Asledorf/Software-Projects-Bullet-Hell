@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ep_homing : e_projectile
 {
+	private void Start()
+	{
+		Destroy(gameObject, 10);
+	}
 	protected override void pattern()
 	{
         Vector3 direction = (Player.position - transform.position).normalized;

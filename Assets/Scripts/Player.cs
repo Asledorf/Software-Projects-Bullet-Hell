@@ -9,7 +9,9 @@ public class Player : MonoBehaviour
 	public static Vector3 position { get { return whiteboard.instance.player.transform.position; } }
 	public static Player _this { get { return whiteboard.instance.player; } }
 
-	float speed = 100;
+	public int lives = 0;
+
+	public float speed = 100;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -30,13 +32,21 @@ public class Player : MonoBehaviour
 		if (Input.GetKey(KeyCode.A)) move += Vector3.left;
 		if (Input.GetKey(KeyCode.D)) move += Vector3.right;
 		transform.position += move.normalized * speed * Time.deltaTime;
+		if (move.normalized != Vector3.zero) transform.up = move.normalized;
+	}
+
+	public void TryKill()
+	{
+		if (lives <= 0)
+			Destroy(gameObject);
+		else
+			lives--;
+		Debug.Log($"lives: {lives}");
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.GetComponent<e_projectile>())
-		{
-			Destroy(gameObject);
-		}
+			TryKill();
 	}
 }

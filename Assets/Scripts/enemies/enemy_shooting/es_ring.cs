@@ -15,16 +15,17 @@ public class es_ring : e_shoot
 
 	public override void Shoot()
 	{
-		Spawn();
+		StartCoroutine(Spawn());
 	}
 
-	private bool running = false;
+	//private bool running = false;
 	IEnumerator Spawn()
 	{
 		void _make_bullet()
 		{
 			e_projectile b = Instantiate(bullet_options[0], transform.position, Quaternion.identity);
 			b.transform.position += _angle.normalized * radius;
+			b.transform.up = _angle;
 		}
 
 		void _update_params()
@@ -37,8 +38,8 @@ public class es_ring : e_shoot
 			_angle = Quaternion.AngleAxis(-delta_angle, Vector3.up) * _angle;
 		}
 
-		if (running) yield break;
-		running = true;
+		//if (running) yield break;
+		//running = true;
 
 		//make ring of bullets
 		for (int i = 0; i < amount; i++)
@@ -49,6 +50,6 @@ public class es_ring : e_shoot
 		}
 		_angle = initial_angle;
 
-		running = false;
+		//running = false;
 	}
 }
