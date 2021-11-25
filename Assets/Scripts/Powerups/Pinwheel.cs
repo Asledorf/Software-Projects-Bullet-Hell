@@ -6,8 +6,18 @@ public class Pinwheel : MonoBehaviour
 {
     public float shoot_speed = 100;
     public GameObject bullet_prefab = null;
-    float fire_rate = 0.5f;
+    public float fire_rate = 0.5f;
     float accumulator = 0;
+
+    public float lifeTime = 5f;
+    private float timer = 0;
+
+    private void OnEnable()
+    {
+        timer = 0;
+        gameObject.GetComponent<Gun>().enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +25,11 @@ public class Pinwheel : MonoBehaviour
         {
             Shoot();
             accumulator = 0;
+        }
+        if((timer += Time.deltaTime) >= lifeTime)
+        {
+            gameObject.GetComponent<Gun>().enabled = true;
+            this.enabled = false;
         }
     }
 

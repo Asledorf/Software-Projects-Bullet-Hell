@@ -143,8 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot_speed: 100
-  bullet_prefab: {fileID: 0}
-  fire_rate: 0.1
+  bullet_prefab: {fileID: 771148728106834557, guid: 70e2112828563a3468209b7fd06ce8a6, type: 3}
 --- !u!58 &-5631080360583100106
 CircleCollider2D:
   m_ObjectHideFlags: 0

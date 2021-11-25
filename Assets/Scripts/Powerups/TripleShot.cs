@@ -10,6 +10,16 @@ public class TripleShot : MonoBehaviour
     float waitTime = 0.4f;
     int shots = 3;
     float accumulator = 0;
+
+    public float lifeTime = 5f;
+    private float timer = 0;
+
+    private void OnEnable()
+    {
+        timer = 0;
+        gameObject.GetComponent<Gun>().enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +31,12 @@ public class TripleShot : MonoBehaviour
         } else if((accumulator += Time.deltaTime) >= waitTime){
             accumulator = 0;
             shots = 3;
+        }
+
+        if ((timer += Time.deltaTime) >= lifeTime)
+        {
+            gameObject.GetComponent<Gun>().enabled = true;
+            this.enabled = false;
         }
     }
 

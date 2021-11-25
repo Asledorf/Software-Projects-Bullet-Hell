@@ -7,12 +7,26 @@ public class Shotgun : MonoBehaviour
     float fire_rate = 0.3f;
     float accumulator = 0;
     // Update is called once per frame
+
+    public float lifeTime = 5f;
+    private float timer = 0;
+
+    private void OnEnable()
+    {
+        timer = 0;
+        gameObject.GetComponent<Gun>().enabled = false;
+    }
     void Update()
     {
         if ((accumulator += Time.deltaTime) >= fire_rate && bullet_prefab)
         {
             Shoot();
             accumulator = 0;
+        }
+        if ((timer += Time.deltaTime) >= lifeTime)
+        {
+            gameObject.GetComponent<Gun>().enabled = true;
+            this.enabled = false;
         }
     }
 

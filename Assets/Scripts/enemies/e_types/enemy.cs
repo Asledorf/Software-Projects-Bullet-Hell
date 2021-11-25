@@ -36,6 +36,7 @@ public abstract class enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-		PowerUpManager.Instance.SpawnPowerUp(transform.position);
+		if(whiteboard.instance.player)
+			PowerUpManager.Instance.SpawnPowerUp(transform.position);
     }
 }
