@@ -26,6 +26,10 @@ public class enemy_beeline : enemy
 
 	public override void Shoot()
 	{
-		
+		if ((dt_accumulator += Time.deltaTime) >= fire_rate)
+		{
+			dt_accumulator = 0;
+			if(shoot_script) shoot_script.Shoot();
+		}
 	}
 }

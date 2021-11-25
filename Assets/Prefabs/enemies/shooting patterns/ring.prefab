@@ -43,9 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73326b2647c32934a88cab9eae26c532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_options: []
-  fire_rate: 0
-  delay: 0
-  skip: 0
-  amount: 0
-  arc_degrees: 0
+  bullet_options:
+  - {fileID: -4919419867358431656, guid: a76f76649e4091142933b34539154190, type: 3}
+  fire_rate: 0.1
+  amount: 10
+  radius: 100
+  delta_raidus: 0
+  initial_angle: {x: 1, y: 1, z: 0}
+  delta_angle: 10
+  delay: 0.5
+  clockwise: 1
