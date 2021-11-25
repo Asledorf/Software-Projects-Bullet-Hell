@@ -12,7 +12,7 @@ public class PinwheelPickup : Powerup
         }
         else
         {
-            target.AddComponent(typeof(Pinwheel));
+            (target.AddComponent(typeof(Pinwheel)) as Pinwheel).enabled = true;
         }
     }
 }

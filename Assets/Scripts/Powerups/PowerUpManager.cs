@@ -21,12 +21,12 @@ public class PowerUpManager : MonoBehaviour
 
     public void SpawnPowerUp(Vector3 position)
     {
-        float roll = Random.Range(0, 1);
+        float roll = Random.Range(0f, 1f);
 
         if(roll <= DropRate)
         {
             float totalChance = 0;
-            roll = Random.Range(0, 1);
+            roll = Random.Range(0f, 1f);
             for(int i = 0; i < chances.Count; i++)
             {
                 totalChance += chances[i];

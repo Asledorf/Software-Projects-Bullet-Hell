@@ -8,6 +8,16 @@ public class Minigun : MonoBehaviour
     public GameObject bullet_prefab = null;
     float fire_rate = 0.05f;
     float accumulator = 0;
+
+    public float lifeTime = 5f;
+    private float timer = 0;
+
+    private void OnEnable()
+    {
+        timer = 0;
+        gameObject.GetComponent<Gun>().enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +25,11 @@ public class Minigun : MonoBehaviour
         {
             Shoot();
             accumulator = 0;
+        }
+        if ((timer += Time.deltaTime) >= lifeTime)
+        {
+            gameObject.GetComponent<Gun>().enabled = true;
+            this.enabled = false;
         }
     }
 

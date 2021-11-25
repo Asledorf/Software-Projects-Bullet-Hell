@@ -9,7 +9,7 @@ public class Pinwheel : MonoBehaviour
     public float fire_rate = 0.5f;
     float accumulator = 0;
 
-    public float lifeTime;
+    public float lifeTime = 5f;
     private float timer = 0;
 
     private void OnEnable()

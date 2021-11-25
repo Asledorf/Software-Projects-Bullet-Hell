@@ -81,6 +81,9 @@
     <Compile Include="Assets\Scripts\enemies\e_types\enemy_beeline.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\enemies\e_spawner.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Pickups\MinigunPickup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Pickups\ShotgunPickup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Pickups\TripleShotPickup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
