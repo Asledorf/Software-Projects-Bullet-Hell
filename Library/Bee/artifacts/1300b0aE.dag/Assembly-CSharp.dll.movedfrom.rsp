@@ -45,9 +45,6 @@ Library\Bee\artifacts\movedfrom\UnityEngine.Purchasing.ref.dll_16517537385704037
 Library\Bee\artifacts\movedfrom\UnityEngine.SpatialTracking.ref.dll_14719643086359921935.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.UI.ref.dll_13680447769613716870.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.XR.LegacyInputHelpers.ref.dll_7144138047138537276.movedfrom
-Library\Bee\artifacts\movedfrom\Unity.Analytics.StandardEvents.dll_4786846351750903996.movedfrom
-Library\Bee\artifacts\movedfrom\Unity.Analytics.Editor.dll_17818019154362807072.movedfrom
-Library\Bee\artifacts\movedfrom\Unity.Analytics.Tracker.dll_8082583230635714193.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.CoreModule.dll_6904342612732283930.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.DeviceSimulatorModule.dll_17698691249510281927.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.dll_6630954590373356123.movedfrom
@@ -122,3 +119,6 @@ Library\Bee\artifacts\movedfrom\UnityEngine.VideoModule.dll_12838440948664261449
 Library\Bee\artifacts\movedfrom\UnityEngine.VRModule.dll_14410823667499394642.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.WindModule.dll_17960590067214579118.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.XRModule.dll_18067398039220401072.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.StandardEvents.dll_5820715972761851418.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.Editor.dll_5578639729835627646.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.Tracker.dll_15458981846514231379.movedfrom
