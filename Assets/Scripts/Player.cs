@@ -6,13 +6,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     float speed = 100;
-    // Start is called before the first frame update
+
+    Rigidbody2D rb;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -20,11 +21,12 @@ public class Player : MonoBehaviour
 
     void Move()
 	{
-        Vector3 move = Vector3.zero;
-        if (Input.GetKey(KeyCode.W)) move += Vector3.up;
-        if (Input.GetKey(KeyCode.S)) move += Vector3.down;
-        if (Input.GetKey(KeyCode.A)) move += Vector3.left;
-        if (Input.GetKey(KeyCode.D)) move += Vector3.right;
-        transform.position += move.normalized * speed * Time.deltaTime;
+        //Vector2 move = Vector2.zero;
+        //if (Input.GetKey(KeyCode.W)) move += Vector2.up;
+        //if (Input.GetKey(KeyCode.S)) move += Vector2.down;
+        //if (Input.GetKey(KeyCode.A)) move += Vector2.left;
+        //if (Input.GetKey(KeyCode.D)) move += Vector2.right;
+        //if (move == Vector2.zero) return;
+        //rb.velocity = move.normalized * speed * Time.deltaTime;
     }
 }
