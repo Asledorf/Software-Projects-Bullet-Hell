@@ -72,6 +72,10 @@
     <Compile Include="Assets\Scripts\square_maker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\topdown-shooter\Spritesheet\spritesheet_characters.xml" />
+    <None Include="Assets\topdown-shooter\License.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.28f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
