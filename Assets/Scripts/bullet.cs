@@ -12,17 +12,8 @@ public class bullet : MonoBehaviour
         transform.position += move * Time.deltaTime;
     }
 
-	private void OnCollisionEnter(Collision collision)
-	{
-		Debug.LogError("FUCK");
-		if (collision.gameObject.CompareTag("bad"))
-		{
-			Destroy(collision.gameObject);
-		}
-	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Debug.LogError("FUCK");
 		if(collision.gameObject.CompareTag("bad"))
 		{
 			Destroy(collision.gameObject);
