@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+	[HideInInspector]
     public Vector3 move = Vector3.zero;
 
     // Update is called once per frame
