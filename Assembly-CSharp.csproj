@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B78B02FA-A2E6-E97C-E77E-5B1088FE9CBE}</ProjectGuid>
+    <ProjectGuid>{9CA12ADE-2A7F-3A9D-77AC-BF1D6D6B634A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,9 +53,6 @@
     <UnityVersion>2021.1.28f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\enemies\enemy_shooting\e_shoot.cs" />
     <Compile Include="Assets\BulletPro\Core\Components\BulletEmitter.cs" />
     <Compile Include="Assets\Scripts\Powerups\Pickups\TripleShotPickup.cs" />
@@ -63,7 +60,6 @@
     <Compile Include="Assets\BulletPro\ExampleAssets\Graphics\Shared\CommonAnimations\SimpleAlphaAnimation.cs" />
     <Compile Include="Assets\Scripts\Powerups\PowerUpManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\Scripts\Scoreboard.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\BulletProSettings.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Asteroids\BPDemo_PlayerControllerWithInertia.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
@@ -106,6 +102,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Asteroids\BPDemo_AsteroidBehaviour.cs" />
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_basic.cs" />
+    <Compile Include="Assets\Scripts\BossManager.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Shared\BPDemo_KillableCharacter.cs" />
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_fast.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Shared\BPDemo_CompatibilityDetector.cs" />
@@ -141,14 +138,17 @@
     <Compile Include="Assets\BulletPro\Core\Components\Managers\BulletAudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\BulletPro\Core\Components\Bullet.cs" />
+    <Compile Include="Assets\Scripts\KILL.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\BulletModules\BulletModuleSpawn.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Shared\BPDemo_Wall.cs" />
     <Compile Include="Assets\Scripts\Powerups\Powerup.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\PatternRuntimeInfo.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\BulletModules\BulletModuleParameters.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Bosses\b_BlackHole.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionsCustomParams.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Shared\BPDemo_FPSCounter.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Powerups\Shotgun.cs" />
     <Compile Include="Assets\Scripts\RespawnTest.cs" />
@@ -156,10 +156,10 @@
     <Compile Include="Assets\Scripts\RespawnManager.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionTimer.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionsScale.cs" />
+    <Compile Include="Assets\Scripts\Bosses\Boss.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\BulletHell\BPDemo_PlayerAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionsRotation.cs" />
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_homing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -206,6 +206,8 @@
     <Compile Include="Assets\BulletPro\Core\Classes\BulletModules\BulletModuleRenderer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\enemies\e_spawner.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Scoreboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -861,11 +863,17 @@
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Analytics">
       <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
@@ -900,6 +908,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
@@ -908,6 +919,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
@@ -965,22 +979,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{E4D58BE0-68BA-29F4-6A31-DD1A43648D2C}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{26A14804-DF4A-F5CA-65AA-8B7531322721}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
-      <Project>{8CD135FA-0B93-22F1-4963-EA2F5BF9721F}</Project>
-      <Name>Unity.2D.Tilemap.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{3D1B991E-1662-F1AA-448D-2B3E0990E8F3}</Project>
-      <Name>Unity.2D.Sprite.Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

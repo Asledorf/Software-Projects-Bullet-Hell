@@ -615,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736837385600121499, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6736837385600121572, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
       propertyPath: m_Enabled
@@ -918,6 +918,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6736837385600121575, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
   m_PrefabInstance: {fileID: 893070897}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1544015741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544015740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fc2e3caec12c24ea804244a71629f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 53061430}
+  shoot_speed: 100
+  bullet_prefab: {fileID: 0}
+  fire_rate: 0.1
+--- !u!114 &1544015742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544015740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a916a78b8aec2448084ef533a04cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 929696837}
 --- !u!50 &1544015747
 Rigidbody2D:
   serializedVersion: 4
@@ -933,7 +962,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
