@@ -16,11 +16,28 @@ public class ScoreManager : MonoBehaviour
     GameObject ScorePanel;
 
     [SerializeField]
-    List<TMP_Text> texts = new List<TMP_Text>();
+    TMP_Text[] texts = new TMP_Text[10];
 
     private void SetScoreboard()
     {
+        Scoreboard scoreboard = JsonConvert.DeserializeObject(PlayerPrefs.GetString("Scoreboard")) as Scoreboard;
 
+        if (scoreboard == null) scoreboard = new Scoreboard();
+
+        if(whiteboard.instance.score > scoreboard.scores[9].value)
+        {
+           scoreboard.scores[9].value = whiteboard.instance.score;
+           scoreboard.scores[9].name = nameInput.text;
+        }
+
+        scoreboard.SortScores();
+
+        for(int i = 0; i < 10; i++)
+        {
+            texts[i].text = scoreboard.scores[i].name + " - " + scoreboard.scores[i].value;
+        }
+
+        PlayerPrefs.SetString("Scoreboard", JsonConvert.SerializeObject(scoreboard));
     }
 
     public void OnNameChanged(string text)

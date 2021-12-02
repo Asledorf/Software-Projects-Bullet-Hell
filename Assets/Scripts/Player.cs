@@ -9,9 +9,14 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public GameObject bulletPrefab;
+
+    public static bool Alive { get => (whiteboard.instance.player != null); }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        whiteboard.instance.player = this;
     }
 
     void Update()
