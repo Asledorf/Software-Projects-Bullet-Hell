@@ -11,14 +11,6 @@ public class Shotgun : MonoBehaviour
     public float lifeTime = 5f;
     private float timer = 0;
 
-    private void Start()
-    {
-        if (!bullet_prefab)
-        {
-            bullet_prefab = gameObject.GetComponent<Player>().bulletPrefab;
-        }
-    }
-
     private void OnEnable()
     {
         timer = 0;

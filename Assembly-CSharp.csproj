@@ -83,11 +83,11 @@
     <Compile Include="Assets\Scripts\enemies\e_types\enemy_tile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\Shared\BPDemo_PlayerController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\BulletPro\Core\Components\Managers\BulletBehaviourManager.cs" />
     <Compile Include="Assets\Scripts\enemies\e_manager.cs" />
     <Compile Include="Assets\Scripts\Powerups\Pickups\PinwheelPickup.cs" />
     <Compile Include="Assets\Scripts\enemies\e_types\enemy.cs" />
+    <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\BulletBehaviourPool.cs" />
     <Compile Include="Assets\BulletPro\ExampleAssets\ScriptsAndPrefabs\BulletHell\BPDemo_SampleSceneManager.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionsHoming.cs" />
@@ -166,6 +166,7 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\BulletPro\Core\Classes\MicroActionTimers\MicroActionsRotation.cs" />
+    <Compile Include="Assets\Scripts\SceneMaster.cs" />
     <Compile Include="Assets\Scripts\enemies\e_projectiles\ep_homing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Powerups\Minigun.cs" />
@@ -215,6 +216,7 @@
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\UI\uipack_fixed\Spritesheet\redSheet.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\BulletPro\Core\Resources\BulletProCollisionHandler.compute" />
     <None Include="Assets\BulletPro\SampleBullets\BulletShaders\Bullets-SingleColor.shader" />
@@ -224,6 +226,7 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\UI\uipack_fixed\Spritesheet\yellowSheet.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\BulletPro\SampleBullets\DefaultShaders\Default-Additive.shader" />
     <None Include="Assets\BulletPro\SampleBullets\DefaultShaders\Default-AlphaBlended.shader" />
@@ -237,14 +240,19 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\UI\onscreencontrols\license.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\topdown-shooter\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\UI\uipack_fixed\Spritesheet\greenSheet.xml" />
+    <None Include="Assets\UI\uipack_fixed\license.txt" />
+    <None Include="Assets\UI\uipack_fixed\Spritesheet\greySheet.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\BulletPro\SampleBullets\BulletShaders\Bullets-AlphaBlended.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\BulletPro\SampleBullets\DefaultShaders\Default-SingleColor.shader" />
+    <None Include="Assets\UI\uipack_fixed\Spritesheet\blueSheet.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\BulletPro\SampleBullets\DefaultShaders\Default-MaxBlended.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
