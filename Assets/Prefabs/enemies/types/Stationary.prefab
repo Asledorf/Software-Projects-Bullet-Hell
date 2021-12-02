@@ -149,6 +149,7 @@ MonoBehaviour:
   shoot_script: {fileID: 5617264127470724007}
   approach_speed: 0
   lateral_speed: 0
+  scoreValue: 20
   fire_rate: 0.2
 --- !u!1001 &249946258428814302
 PrefabInstance:

@@ -149,6 +149,7 @@ MonoBehaviour:
   shoot_script: {fileID: 7816287330060245147}
   approach_speed: 0
   lateral_speed: 0
+  scoreValue: 20
   fire_rate: 0.2
   orbitRadius: 75
   orbitRadiusCorrectionSpeed: 0.5

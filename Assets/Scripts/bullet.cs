@@ -17,6 +17,7 @@ public class bullet : MonoBehaviour
 		if(collision.gameObject.CompareTag("bad"))
 		{
 			Destroy(collision.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }

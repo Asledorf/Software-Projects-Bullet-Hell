@@ -101,6 +101,7 @@ MonoBehaviour:
   shoot_script: {fileID: 0}
   approach_speed: 20
   lateral_speed: 0.5
+  scoreValue: 20
   fire_rate: 0.2
 --- !u!61 &-3247969490878547886
 BoxCollider2D:
