@@ -6,7 +6,9 @@ public class ShotgunPickup : Powerup
 {
     public override void PowerupEffect(GameObject target)
     {
-        if(target.TryGetComponent(out Shotgun shotgun))
+        if (!target.TryGetComponent(out Gun gun) || !gun.enabled) return;
+
+        if (target.TryGetComponent(out Shotgun shotgun))
         {
             shotgun.enabled = true;
         }
@@ -14,5 +16,7 @@ public class ShotgunPickup : Powerup
         {
             (target.AddComponent(typeof(Shotgun)) as Shotgun).enabled = true;
         }
+
+        Destroy(gameObject);
     }
 }

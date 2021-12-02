@@ -5,12 +5,21 @@ using UnityEngine;
 public class Minigun : MonoBehaviour
 {
     public float shoot_speed = 100;
-    public GameObject bullet_prefab = null;
+    public GameObject bullet_prefab;
     float fire_rate = 0.05f;
     float accumulator = 0;
 
     public float lifeTime = 5f;
     private float timer = 0;
+
+
+    private void Start()
+    {
+        if (!bullet_prefab)
+        {
+            bullet_prefab = gameObject.GetComponent<Player>().bulletPrefab;
+        }
+    }
 
     private void OnEnable()
     {

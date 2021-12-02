@@ -25,11 +25,7 @@ public abstract class Powerup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(collision.gameObject.TryGetComponent(out Gun gun) && gun.enabled)
-            {
-                PowerupEffect(collision.gameObject);
-                Destroy(this.gameObject);
-            }
+            PowerupEffect(collision.gameObject);
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TripleShot : MonoBehaviour
 {
     public float shoot_speed = 100;
-    public GameObject bullet_prefab = null;
+    public GameObject bullet_prefab;
     float fire_rate = 0.1f;
     float waitTime = 0.4f;
     int shots = 3;
@@ -13,6 +13,14 @@ public class TripleShot : MonoBehaviour
 
     public float lifeTime = 5f;
     private float timer = 0;
+
+    private void Start()
+    {
+        if (!bullet_prefab)
+        {
+            bullet_prefab = gameObject.GetComponent<Player>().bulletPrefab;
+        }
+    }
 
     private void OnEnable()
     {

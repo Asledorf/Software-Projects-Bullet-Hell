@@ -14,5 +14,12 @@ public class whiteboard : MonoBehaviour
 		internal static readonly whiteboard _instance = new whiteboard();
 	}
 
-	public Player player;
+    private void Start()
+    {
+		DontDestroyOnLoad(this.gameObject);
+    }
+
+    public Player player;
+
+	public int score = 0;
 }

@@ -12,6 +12,8 @@ public abstract class enemy : MonoBehaviour
 	public float approach_speed = 100f;
 	public float lateral_speed = .5f;
 
+	public int scoreValue;
+
 	public float fire_rate = .2f;
 	protected float dt_accumulator = 0;
 
@@ -36,7 +38,10 @@ public abstract class enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-		if(whiteboard.instance.player)
+        if (whiteboard.instance.player)
+        {
 			PowerUpManager.Instance.SpawnPowerUp(transform.position);
+			whiteboard.instance.score += scoreValue;
+        }
     }
 }
