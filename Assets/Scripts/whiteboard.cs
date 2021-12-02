@@ -14,12 +14,17 @@ public class whiteboard : MonoBehaviour
 		internal static readonly whiteboard _instance = new whiteboard();
 	}
 
-    private void Start()
+    private void Awake()
     {
 		DontDestroyOnLoad(this.gameObject);
+		instance.leftJoystick = this.leftJoystick;
+		instance.rightJoystick = this.rightJoystick;
     }
 
     public Player player;
 
 	public int score = 0;
+
+	public Joystick leftJoystick;
+	public Joystick rightJoystick;
 }

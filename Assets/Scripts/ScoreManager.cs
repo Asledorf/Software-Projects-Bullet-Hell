@@ -20,19 +20,26 @@ public class ScoreManager : MonoBehaviour
 
     private void SetScoreboard()
     {
-        Scoreboard scoreboard = JsonConvert.DeserializeObject(PlayerPrefs.GetString("Scoreboard")) as Scoreboard;
+        Scoreboard scoreboard = JsonConvert.DeserializeObject<Scoreboard>(PlayerPrefs.GetString("Scoreboard"));
 
-        if (scoreboard == null) scoreboard = new Scoreboard();
-
-        if(whiteboard.instance.score > scoreboard.scores[9].value)
+        if (scoreboard == null)
         {
-           scoreboard.scores[9].value = whiteboard.instance.score;
-           scoreboard.scores[9].name = nameInput.text;
+            scoreboard = new Scoreboard();
+            scoreboard.scores[0].value = whiteboard.instance.score;
+            scoreboard.scores[0].name = nameInput.text;
+        }
+        else
+        {
+            if (whiteboard.instance.score >= scoreboard.scores[9].value)
+            {
+                scoreboard.scores[9].value = whiteboard.instance.score;
+                scoreboard.scores[9].name = nameInput.text;
+            }
+
+            scoreboard.SortScores();
         }
 
-        scoreboard.SortScores();
-
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             texts[i].text = scoreboard.scores[i].name + " - " + scoreboard.scores[i].value;
         }

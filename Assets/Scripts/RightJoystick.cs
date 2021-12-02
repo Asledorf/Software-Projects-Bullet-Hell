@@ -11,6 +11,11 @@ public class RightJoystick : MonoBehaviour
     public float fire_rate = 0.1f;
     float accumulator = 0;
 
+    private void Start()
+    {
+        joystick = whiteboard.instance.rightJoystick;
+    }
+
     void Update()
     {
         if ((accumulator += Time.deltaTime) >= fire_rate)

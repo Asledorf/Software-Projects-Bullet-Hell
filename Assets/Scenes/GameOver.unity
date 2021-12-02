@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 256
-  m_fontSizeBase: 256
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1066,7 +1066,17 @@ MonoBehaviour:
   nameInput: {fileID: 1597650379}
   NamePanel: {fileID: 1883402470}
   ScorePanel: {fileID: 1746558075}
-  texts: []
+  texts:
+  - {fileID: 119950768}
+  - {fileID: 571978090}
+  - {fileID: 2083549670}
+  - {fileID: 624219836}
+  - {fileID: 1475443786}
+  - {fileID: 2034865726}
+  - {fileID: 793033254}
+  - {fileID: 1967177187}
+  - {fileID: 828259404}
+  - {fileID: 1951573673}
 --- !u!4 &1153382509
 Transform:
   m_ObjectHideFlags: 0

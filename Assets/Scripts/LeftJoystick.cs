@@ -12,6 +12,7 @@ public class LeftJoystick : MonoBehaviour
 	private void Start()
 	{
         rb = GetComponent<Rigidbody2D>();
+        joystick = whiteboard.instance.leftJoystick;
     }
 
 	void Update()

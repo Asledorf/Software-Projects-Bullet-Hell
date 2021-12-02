@@ -8,14 +8,22 @@ public class Scoreboard
 {
     public Score[] scores = new Score[10];
 
+    public Scoreboard()
+    {
+        for(int i = 0; i < scores.Length; i++)
+        {
+            scores[i] = new Score();
+        }
+    }
+
     public class Score
     {
-        public string name = "";
-        public int value = 0;
+        public string name = "AAA";
+        public int value = 100;
     }
 
     public void SortScores()
     {
-        scores = scores.OrderBy(s => s.value).ToArray();
+        scores = scores.OrderBy(s => s.value).Reverse().ToArray();
     }
 }
