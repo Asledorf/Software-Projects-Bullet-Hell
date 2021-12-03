@@ -20,11 +20,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 shoot_direction = Vector3.zero;
-        if (Input.GetKey(KeyCode.UpArrow)) shoot_direction += Vector3.up;
-        if (Input.GetKey(KeyCode.DownArrow)) shoot_direction += Vector3.down;
-        if (Input.GetKey(KeyCode.LeftArrow)) shoot_direction += Vector3.left;
-        if (Input.GetKey(KeyCode.RightArrow)) shoot_direction += Vector3.right;
+        Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
 
         if (shoot_direction != Vector3.zero & bullet_prefab)
         {

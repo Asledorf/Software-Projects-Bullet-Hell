@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shotgun : MonoBehaviour
+public class Shotgun : Powerup
 {
     public float shoot_speed = 100;
     public GameObject bullet_prefab = null;
@@ -32,9 +32,10 @@ public class Shotgun : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
+        if (shoot_direction.y > 0)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (shoot_direction.x > 0)
             {
                 GameObject left = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
                 left.GetComponent<bullet>().move = (Vector3.right + Vector3.up + Vector3.up).normalized * shoot_speed;
@@ -46,7 +47,7 @@ public class Shotgun : MonoBehaviour
                 right.GetComponent<bullet>().move = (Vector3.right + Vector3.right + Vector3.up).normalized * shoot_speed;
                 Destroy(right, 3);
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (shoot_direction.x < 0)
             {
                 GameObject left = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
                 left.GetComponent<bullet>().move = (Vector3.left + Vector3.up + Vector3.up).normalized * shoot_speed;
@@ -64,9 +65,9 @@ public class Shotgun : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (shoot_direction.y < 0)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (shoot_direction.x > 0)
             {
                 GameObject left = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
                 left.GetComponent<bullet>().move = (Vector3.right + Vector3.down + Vector3.down).normalized * shoot_speed;
@@ -78,7 +79,7 @@ public class Shotgun : MonoBehaviour
                 right.GetComponent<bullet>().move = (Vector3.right + Vector3.right + Vector3.down).normalized * shoot_speed;
                 Destroy(right, 3);
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (shoot_direction.x < 0)
             {
                 GameObject left = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
                 left.GetComponent<bullet>().move = (Vector3.left + Vector3.down + Vector3.down).normalized * shoot_speed;
@@ -96,12 +97,12 @@ public class Shotgun : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (shoot_direction.x > 0)
         {
             Right();
         }
 
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (shoot_direction.x < 0)
         {
             Left();
         }
@@ -157,5 +158,10 @@ public class Shotgun : MonoBehaviour
         GameObject down = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
         down.GetComponent<bullet>().move = (Vector3.left + Vector3.left + Vector3.down).normalized * shoot_speed;
         Destroy(down, 3);
+    }
+
+    public override void PowerupEffect(GameObject target)
+    {
+        throw new System.NotImplementedException();
     }
 }

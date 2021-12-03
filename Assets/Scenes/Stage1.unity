@@ -409,7 +409,7 @@ MonoBehaviour:
   - {fileID: 1514104370653681137, guid: 4f793ce880393124e95741462dc0edf0, type: 3}
   - {fileID: 2055187496425529771, guid: 913f47817c8fed046b55189760e0ec13, type: 3}
   - {fileID: 7395674612413578158, guid: 539b947de1e2dac4fbb1945ebc39eaae, type: 3}
-  DropRate: 0.1
+  DropRate: 1
   chances:
   - 0.2
   - 0.2
