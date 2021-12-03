@@ -477,6 +477,7 @@
 "Assets/Scripts/SceneMaster.cs"
 "Assets/Scripts/Scoreboard.cs"
 "Assets/Scripts/ScoreManager.cs"
+"Assets/Scripts/SetVolume.cs"
 "Assets/Scripts/whiteboard.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
