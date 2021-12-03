@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeftJoystick : MonoBehaviour
 {
     public Joystick joystick;
-    float speed = 10f;
+    float speed = 80f;
 
     Rigidbody2D rb;
 

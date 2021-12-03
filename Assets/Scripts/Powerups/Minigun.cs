@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minigun : MonoBehaviour
+public class Minigun : Powerup
 {
     public float shoot_speed = 100;
     public GameObject bullet_prefab;
@@ -35,11 +35,7 @@ public class Minigun : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 shoot_direction = Vector3.zero;
-        if (Input.GetKey(KeyCode.UpArrow)) shoot_direction += Vector3.up;
-        if (Input.GetKey(KeyCode.DownArrow)) shoot_direction += Vector3.down;
-        if (Input.GetKey(KeyCode.LeftArrow)) shoot_direction += Vector3.left;
-        if (Input.GetKey(KeyCode.RightArrow)) shoot_direction += Vector3.right;
+        Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
 
         if (shoot_direction != Vector3.zero & bullet_prefab)
         {
@@ -47,5 +43,10 @@ public class Minigun : MonoBehaviour
             go.GetComponent<bullet>().move = shoot_direction.normalized * shoot_speed;
             Destroy(go, 3);
         }
+    }
+
+    public override void PowerupEffect(GameObject target)
+    {
+        throw new System.NotImplementedException();
     }
 }

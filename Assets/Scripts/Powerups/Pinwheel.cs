@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pinwheel : MonoBehaviour
+public class Pinwheel : Powerup
 {
     public float shoot_speed = 100;
     public GameObject bullet_prefab;
@@ -35,10 +35,8 @@ public class Pinwheel : MonoBehaviour
 
     void Shoot()
     {
-        if (bullet_prefab && (Input.GetKey(KeyCode.UpArrow) ||
-            Input.GetKey(KeyCode.DownArrow) ||
-            Input.GetKey(KeyCode.RightArrow) ||
-            Input.GetKey(KeyCode.LeftArrow)))
+        Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
+        if (bullet_prefab && shoot_direction != Vector3.zero)
         {
             //make bullets
             GameObject up = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
@@ -70,5 +68,10 @@ public class Pinwheel : MonoBehaviour
             Destroy(leftDown, 3);
             Destroy(rightDown, 3);
         }
+    }
+
+    public override void PowerupEffect(GameObject target)
+    {
+        throw new System.NotImplementedException();
     }
 }
