@@ -21,7 +21,17 @@ public class whiteboard : MonoBehaviour
 		instance.rightJoystick = this.rightJoystick;
     }
 
-    public Player player;
+	public void OnPause()
+	{
+		Time.timeScale = 0;
+	}
+
+	public void OnResume()
+	{
+		Time.timeScale = 1.0f;
+	}
+
+	public Player player;
 
 	public int score = 0;
 
