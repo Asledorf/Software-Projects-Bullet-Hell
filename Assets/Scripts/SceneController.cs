@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-    class SceneController : MonoBehaviour
+    public class SceneController : MonoBehaviour
     {
         public bool soundToMenu = true;
         static SceneController instance = null;
@@ -17,15 +17,23 @@ namespace Assets.Scripts
      
         public void Awake()
         {
-            instance = this;
+            if (instance == null)
+                instance = this;
+            else
+            {
+                Destroy(instance.gameObject);
+                instance = this;
+            }
+
             DontDestroyOnLoad(this);
         }
+
         public void OnLoadScene(string sceneString)
         {
             StartCoroutine(LoadScene(sceneString));
         }
 
-        IEnumerator LoadScene(string sceneString)
+        public IEnumerator LoadScene(string sceneString)
         {
             SceneManager.LoadScene(sceneString);
 

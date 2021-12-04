@@ -22,6 +22,7 @@ public class RespawnManager : MonoBehaviour
     private void Start()
     {
         instance = this;
+        lives = 3;
     }
 
     private void Update()

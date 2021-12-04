@@ -38,7 +38,7 @@ public abstract class enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (whiteboard.instance.player)
+        if (Player.Alive)
         {
 			PowerUpManager.Instance.SpawnPowerUp(transform.position);
 			whiteboard.instance.score += scoreValue;

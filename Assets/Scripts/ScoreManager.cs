@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -57,5 +58,11 @@ public class ScoreManager : MonoBehaviour
             
             ScorePanel.SetActive(true);
         }
+    }
+
+    public void OnBackClicked()
+    {
+        whiteboard.instance.score = 0;
+        SceneManager.LoadScene(0);
     }
 }
