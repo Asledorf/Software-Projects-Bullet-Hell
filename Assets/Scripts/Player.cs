@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     float speed = 80;
+    float max_speed = 80;
 
     Rigidbody2D rb;
 
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        ClampSpeed();
+        Wrap();
     }
 
     void Move()
@@ -35,6 +38,16 @@ public class Player : MonoBehaviour
 		transform.position += move.normalized * speed * Time.deltaTime;
         if (move == Vector3.zero) return;
         transform.up = move.normalized;
+	}
+
+    public void Wrap()
+	{
+        //implement screen wrapping
+	}
+
+    public void ClampSpeed()
+	{
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
