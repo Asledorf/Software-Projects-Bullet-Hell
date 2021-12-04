@@ -2,37 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : BasicShoot
 {
 	public float shoot_speed = 100;
-	public GameObject bullet_prefab = null;
-	float fire_rate = 0.2f;
-	float accumulator = 0;
-	Vector3 shoot_direction;
 
-	void Update()
+	RightJoystick joystick;
+
+    public void Awake()
+    {
+		joystick = GetComponent<RightJoystick>();
+		if (joystick.shotType == null) joystick.shotType = this;
+
+		fire_rate = 0.15f;
+    }
+
+    public void OnEnable()
+    {
+		if (joystick.shotType != null) joystick.shotType.enabled = false;
+
+		joystick.shotType = this;
+		joystick.fire_rate = fire_rate;
+    }
+
+	public override bool Shoot(Vector2 direction, GameObject bullet)
 	{
-		shoot_direction = Vector3.zero;
-
-		if (Input.GetKey(KeyCode.UpArrow)) shoot_direction += Vector3.up;
-		if (Input.GetKey(KeyCode.DownArrow)) shoot_direction += Vector3.down;
-		if (Input.GetKey(KeyCode.LeftArrow)) shoot_direction += Vector3.left;
-		if (Input.GetKey(KeyCode.RightArrow)) shoot_direction += Vector3.right;
-
-		if ((accumulator += Time.deltaTime) >= fire_rate)
+		if (direction != Vector2.zero && bullet)	
 		{
-			Shoot();
-			accumulator = 0;
-		}
-	}
-
-	void Shoot()
-	{
-		if (shoot_direction != Vector3.zero && bullet_prefab)	
-		{
-			GameObject go = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-			go.GetComponent<bullet>().move = shoot_direction.normalized * shoot_speed;
+			GameObject go = Instantiate(bullet, transform.position, Quaternion.identity, null);
+			go.GetComponent<bullet>().move = direction.normalized * shoot_speed;
 			Destroy(go, 3);
+
 		}
+		return false;
 	}
 }

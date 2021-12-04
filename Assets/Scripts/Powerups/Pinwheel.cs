@@ -2,51 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pinwheel : Powerup
+public class Pinwheel : BasicShoot
 {
     public float shoot_speed = 100;
-    public GameObject bullet_prefab;
-    public float fire_rate = 0.5f;
-    float accumulator = 0;
+
+    RightJoystick joystick;
 
     public float lifeTime = 5f;
     private float timer = 0;
 
-    private void OnEnable()
+    public void Awake()
     {
-        timer = 0;
-        gameObject.GetComponent<Gun>().enabled = false;
+        joystick = GetComponent<RightJoystick>();
+        fire_rate = 0.2f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnable()
     {
-        if ((accumulator += Time.deltaTime) >= fire_rate)
+        if (joystick == null) joystick = GetComponent<RightJoystick>();
+        if (joystick.shotType != null) joystick.shotType.enabled = false;
+
+        joystick.shotType = this;
+        joystick.fire_rate = fire_rate;
+    }
+
+    private void Update()
+    {
+        if ((timer += Time.deltaTime) >= lifeTime)
         {
-            Shoot();
-            accumulator = 0;
-        }
-        if((timer += Time.deltaTime) >= lifeTime)
-        {
-            gameObject.GetComponent<Gun>().enabled = true;
+            GetComponent<Gun>().enabled = true;
             this.enabled = false;
         }
     }
 
-    void Shoot()
+    public override bool Shoot(Vector2 direction, GameObject bullet)
     {
         Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
-        if (bullet_prefab && shoot_direction != Vector3.zero)
+        if (bullet && shoot_direction != Vector3.zero)
         {
             //make bullets
-            GameObject up = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject down = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject left = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject right = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject leftUp = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject rightUp = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject leftDown = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            GameObject rightDown = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
+            GameObject up = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject down = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject left = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject right = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject leftUp = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject rightUp = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject leftDown = Instantiate(bullet, transform.position, Quaternion.identity, null);
+            GameObject rightDown = Instantiate(bullet, transform.position, Quaternion.identity, null);
 
             //move bullets
             up.GetComponent<bullet>().move = Vector3.up.normalized * shoot_speed;
@@ -68,10 +70,11 @@ public class Pinwheel : Powerup
             Destroy(leftDown, 3);
             Destroy(rightDown, 3);
         }
+        return false;
     }
 
-    public override void PowerupEffect(GameObject target)
+    private void OnDisable()
     {
-        throw new System.NotImplementedException();
+        timer = 0;
     }
 }
