@@ -6,8 +6,6 @@ public class PinwheelPickup : Powerup
 {
     public override void PowerupEffect(GameObject target)
     {
-        if (!target.TryGetComponent(out Gun gun) || !gun.enabled) return;
-
         if (target.TryGetComponent(out Pinwheel pinwheel))
         {
             pinwheel.enabled = true;

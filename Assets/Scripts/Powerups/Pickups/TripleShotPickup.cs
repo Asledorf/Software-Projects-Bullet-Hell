@@ -6,8 +6,6 @@ public class TripleShotPickup : Powerup
 {
     public override void PowerupEffect(GameObject target)
     {
-        if (!target.TryGetComponent(out Gun gun) || !gun.enabled) return;
-
         if (target.TryGetComponent(out TripleShot tripleShot))
         {
             tripleShot.enabled = true;
