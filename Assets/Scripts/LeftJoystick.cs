@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeftJoystick : MonoBehaviour
 {
     public Joystick joystick;
-    float speed = 80f;
+    public float speed = 80f;
 
     Rigidbody2D rb;
 
@@ -18,6 +18,6 @@ public class LeftJoystick : MonoBehaviour
 	void Update()
     {
         rb.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
-        transform.up = rb.velocity;
+        if(rb.velocity != Vector2.zero) transform.up = rb.velocity;
     }
 }

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B78B02FA-A2E6-E97C-E77E-5B1088FE9CBE}</ProjectGuid>
+    <ProjectGuid>{9CA12ADE-2A7F-3A9D-77AC-BF1D6D6B634A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -210,7 +210,7 @@
     <Compile Include="Assets\BulletPro\Core\Classes\BulletModules\BulletModuleRenderer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\enemies\e_spawner.cs" />
-    <Compile Include="Assets\Scripts\BasicShoot.cs" />
+    <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -7,7 +7,11 @@ public class bullet : MonoBehaviour
 	[HideInInspector]
     public Vector3 move = Vector3.zero;
 
-    // Update is called once per frame
+	void Start()
+	{
+		transform.up = move;
+	}
+
     void Update()
     {
         transform.position += move * Time.deltaTime;
