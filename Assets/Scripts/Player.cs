@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Gun))]
 public class Player : MonoBehaviour
 {
-    float speed = 1000;
+    float speed = 80;
 
     Rigidbody2D rb;
 
@@ -27,12 +27,18 @@ public class Player : MonoBehaviour
 
     void Move()
 	{
-        Vector2 move = Vector2.zero;
-        if (Input.GetKey(KeyCode.W)) move += Vector2.up;
-        if (Input.GetKey(KeyCode.S)) move += Vector2.down;
-        if (Input.GetKey(KeyCode.A)) move += Vector2.left;
-        if (Input.GetKey(KeyCode.D)) move += Vector2.right;
-		rb.velocity += move.normalized * speed * Time.deltaTime;
+        Vector3 move = Vector3.zero;
+        if (Input.GetKey(KeyCode.W)) move += Vector3.up;
+        if (Input.GetKey(KeyCode.S)) move += Vector3.down;
+        if (Input.GetKey(KeyCode.A)) move += Vector3.left;
+        if (Input.GetKey(KeyCode.D)) move += Vector3.right;
+		transform.position += move.normalized * speed * Time.deltaTime;
+        if (move == Vector3.zero) return;
         transform.up = move.normalized;
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+        if (collision.gameObject.tag == "bad") Destroy(gameObject);
 	}
 }
