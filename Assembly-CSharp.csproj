@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,26 +53,41 @@
     <UnityVersion>2021.1.28f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\bullet.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\AimBeam.cs" />
+    <Compile Include="Assets\Scripts\bgtransfer.cs" />
     <Compile Include="Assets\Scripts\RightJoystick.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\ParallaxLayer.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\Crosshair.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\ExampleShipControl.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\PSDestroy.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\LeftJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\ShipCamera.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\PlayerControlledTurret.cs" />
     <Compile Include="Assets\Scripts\square.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\2D Space Kit\Scripts\CustomPointer.cs" />
     <Compile Include="Assets\Scripts\square_maker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\2D Space Kit\Backgrounds\Background Tip.txt" />
+    <None Include="Assets\2D Space Kit\Readme.txt" />
     <None Include="Assets\topdown-shooter\Spritesheet\spritesheet_characters.xml" />
+    <None Include="Assets\2D Space Kit\Background Elements\Planets\Planet Masks\Note.txt" />
+    <None Include="Assets\2D Space Kit\Background Elements\Stars\Recolor Us!.txt" />
+    <None Include="Assets\2D Space Kit\Particles (Sprites)\Note on Flares.txt" />
+    <None Include="Assets\2D Space Kit\Backgrounds\Fantasy Purple 2048\Note.txt" />
+    <None Include="Assets\2D Space Kit\Scripts\WARNING.txt" />
+    <None Include="Assets\2D Space Kit\Ships and Stations\Rendering Tip.txt" />
     <None Include="Assets\topdown-shooter\License.txt" />
   </ItemGroup>
   <ItemGroup>
