@@ -6,6 +6,9 @@ using UnityEngine;
 public class e_spawner : MonoBehaviour
 {
     public GameObject[] enemies;
+    public GameObject BOSS;
+    public float bosssSpawnChance = 1;
+
 
     [Space(10)]
     [Header("Where to spawn")]
@@ -39,18 +42,23 @@ public class e_spawner : MonoBehaviour
         time_accumulator += Time.deltaTime;
         if (time_accumulator > current_spawn_delay)
 		{
-			//spawn random enemy
-			for (int i = 0; i < Random.Range(min_spawn_amount, max_spawn_amount); i++)
+            //spawn random enemy
+
+            for (int i = 0; i < Random.Range(min_spawn_amount, max_spawn_amount); i++)
 			{
                 Vector3 position = Vector3.zero;
                 position.x = Random.Range(x_min,x_max);
                 position.y = Random.Range(y_min,y_max);
+
                 Instantiate(enemies[(int)Random.Range(0,enemies.Length)], position, Quaternion.identity);
 			}
+
             //set time accumulator to 0
             time_accumulator = 0;
             //reset random delay
             current_spawn_delay = Random.Range(min_spawn_time, max_spawn_time);
+                
+            //f (Random.Range(0, 100) > bosssSpawnChance) Instantiate(BOSS, new Vector2(Random.Range(x_min, x_max), Random.Range(y_min, y_max)), Quaternion.identity);
         }
     }
 }
