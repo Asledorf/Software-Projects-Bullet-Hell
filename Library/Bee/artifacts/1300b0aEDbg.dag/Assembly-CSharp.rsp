@@ -435,6 +435,7 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
+"Assets/Scripts/BasicShoot.cs"
 "Assets/Scripts/Bosses/Boss.cs"
 "Assets/Scripts/Bosses/b_BlackHole.cs"
 "Assets/Scripts/BossManager.cs"
