@@ -2,58 +2,86 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TripleShot : Powerup
+public class TripleShot : BasicShoot
 {
-    public float shoot_speed = 100;
-    public GameObject bullet_prefab;
-    float fire_rate = 0.1f;
-    float waitTime = 0.4f;
-    int shots = 3;
-    float accumulator = 0;
+    public float shoot_speed = 200;
+
+    float waitTime = 0.08f;
+    float waitTimer = 0;
+    int shots = 0;
 
     public float lifeTime = 5f;
     private float timer = 0;
 
-    private void OnEnable()
+    bool shooting = false;
+
+    public RightJoystick joystick;
+
+    private Vector2 shoot_direction;
+    private GameObject bullet;
+
+    public void Awake()
     {
-        timer = 0;
-        gameObject.GetComponent<Gun>().enabled = false;
+        joystick = GetComponent<RightJoystick>();
+        fire_rate = 0.25f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnable()
     {
-        if ((accumulator += Time.deltaTime) >= fire_rate && shots > 0)
+        if (joystick == null) joystick = GetComponent<RightJoystick>();
+        if (joystick.shotType != null) joystick.shotType.enabled = false;
+
+        joystick.shotType = this;
+        joystick.fire_rate = fire_rate;
+    }
+
+    private void Update()
+    {
+        if (shooting)
         {
-            Shoot();
-            accumulator = 0;
-            shots--;
-        } else if((accumulator += Time.deltaTime) >= waitTime){
-            accumulator = 0;
-            shots = 3;
+            if ((waitTimer += Time.deltaTime) >= waitTime)
+            {
+                GameObject go = Instantiate(bullet, transform.position, Quaternion.identity, null);
+                go.GetComponent<bullet>().move = shoot_direction.normalized * shoot_speed;
+                Destroy(go, 3);
+                waitTimer = 0;
+                if(shots++ == 2)
+                {
+                    shooting = false;
+                    shots = 0;
+
+                    joystick.shooting = shooting;
+                }
+                
+            }
         }
 
         if ((timer += Time.deltaTime) >= lifeTime)
         {
-            gameObject.GetComponent<Gun>().enabled = true;
+            GetComponent<Gun>().enabled = true;
             this.enabled = false;
         }
     }
 
-    void Shoot()
+    public override bool Shoot(Vector2 direction, GameObject bullet)
     {
-        Vector3 shoot_direction = whiteboard.instance.rightJoystick.Direction;
-
-        if (shoot_direction != Vector3.zero && bullet_prefab)
+        if (!shooting)
         {
-            GameObject go = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            go.GetComponent<bullet>().move = shoot_direction.normalized * shoot_speed;
-            Destroy(go, 3);
+            if (direction != Vector2.zero && bullet)
+            {
+                shoot_direction = direction;
+                this.bullet = bullet;
+                shooting = true;
+            }
         }
+
+        return shooting;
     }
 
-    public override void PowerupEffect(GameObject target)
+    private void OnDisable()
     {
-        throw new System.NotImplementedException();
+        timer = 0;
+        shots = 0;
+        waitTimer = 0;
     }
 }

@@ -140,13 +140,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6736837385600121575}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 704747a43ef81b24aade119eaecda9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_rate: 0.2
   shoot_speed: 100
-  bullet_prefab: {fileID: 771148728106834557, guid: 70e2112828563a3468209b7fd06ce8a6, type: 3}
 --- !u!58 &-5631080360583100106
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -214,3 +214,4 @@ MonoBehaviour:
   shoot_speed: 100
   bullet_prefab: {fileID: 771148728106834557, guid: 70e2112828563a3468209b7fd06ce8a6, type: 3}
   fire_rate: 0.1
+  shotType: {fileID: 0}

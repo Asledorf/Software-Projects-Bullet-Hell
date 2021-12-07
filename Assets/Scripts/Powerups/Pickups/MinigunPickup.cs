@@ -12,7 +12,8 @@ public class MinigunPickup : Powerup
         }
         else
         {
-            (target.AddComponent(typeof(Minigun)) as Minigun).enabled = true;
+            target.AddComponent(typeof(Minigun));
+            target.GetComponent<Minigun>().enabled = true;
         }
 
         Destroy(gameObject);

@@ -11,6 +11,11 @@ public class RightJoystick : MonoBehaviour
     public float fire_rate = 0.1f;
     float accumulator = 0;
 
+    public BasicShoot shotType = null;
+
+    [HideInInspector]
+    public bool shooting = false;
+
     private void Start()
     {
         joystick = whiteboard.instance.rightJoystick;
@@ -18,22 +23,18 @@ public class RightJoystick : MonoBehaviour
 
     void Update()
     {
-        if ((accumulator += Time.deltaTime) >= fire_rate)
+        if (!shooting)
         {
-            Shoot();
-            accumulator = 0;
-        }
-    }
+            if ((accumulator += Time.deltaTime) >= fire_rate)
+            {
+                Vector2 shoot_direction = new Vector2(joystick.Horizontal, joystick.Vertical);
 
-    void Shoot()
-    {
-        Vector2 shoot_direction = new Vector2(joystick.Horizontal, joystick.Vertical);
-
-        if (shoot_direction != Vector2.zero & bullet_prefab)
-        {
-            GameObject go = Instantiate(bullet_prefab, transform.position, Quaternion.identity, null);
-            go.GetComponent<bullet>().move = shoot_direction.normalized * shoot_speed;
-            Destroy(go, 3);
+                if(shoot_direction != Vector2.zero)
+                {
+                    shooting = shotType.Shoot(shoot_direction, bullet_prefab);
+                    accumulator = 0;
+                }
+            }
         }
     }
 }

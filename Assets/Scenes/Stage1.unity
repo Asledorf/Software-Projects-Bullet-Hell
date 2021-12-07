@@ -610,11 +610,11 @@ MonoBehaviour:
   - {fileID: 7395674612413578158, guid: 539b947de1e2dac4fbb1945ebc39eaae, type: 3}
   DropRate: 1
   chances:
-  - 0.2
-  - 0.2
-  - 0.2
-  - 0.2
-  - 0.2
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
 --- !u!4 &529811723
 Transform:
   m_ObjectHideFlags: 0
@@ -773,6 +773,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 53061430}
+    - target: {fileID: 5748305506922100767, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
+      propertyPath: shotType
+      value: 
+      objectReference: {fileID: 893070898}
     - target: {fileID: 6736837385600121498, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -831,7 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736837385600121499, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6736837385600121572, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
       propertyPath: m_Enabled
@@ -867,6 +871,17 @@ PrefabInstance:
       objectReference: {fileID: 929696837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
+--- !u!114 &893070898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6736837385600121499, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
+  m_PrefabInstance: {fileID: 893070897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544015740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704747a43ef81b24aade119eaecda9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &929696836 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -1693,36 +1708,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6736837385600121575, guid: 293a6fc8a5f55124f9207926fae47c04, type: 3}
   m_PrefabInstance: {fileID: 893070897}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1544015741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544015740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fc2e3caec12c24ea804244a71629f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystick: {fileID: 53061430}
-  shoot_speed: 100
-  bullet_prefab: {fileID: 0}
-  fire_rate: 0.1
---- !u!114 &1544015742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544015740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a916a78b8aec2448084ef533a04cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystick: {fileID: 929696837}
-  speed: 80
 --- !u!50 &1544015747
 Rigidbody2D:
   serializedVersion: 4
