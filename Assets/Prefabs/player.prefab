@@ -215,3 +215,4 @@ MonoBehaviour:
   bullet_prefab: {fileID: 771148728106834557, guid: 70e2112828563a3468209b7fd06ce8a6, type: 3}
   fire_rate: 0.1
   shotType: {fileID: 0}
+  shooting: 0

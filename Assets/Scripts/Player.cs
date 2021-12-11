@@ -54,4 +54,9 @@ public class Player : MonoBehaviour
 	{
         if (collision.gameObject.tag == "bad") Destroy(gameObject);
 	}
+
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
 }
